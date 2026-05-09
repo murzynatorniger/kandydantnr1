@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateusz Talar - Nowa Przyszłość Zaczyna Się Dziś</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome dla ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🇵🇱</span>
+                <span class="logo-text">Talar 2026</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Strona główna</a></li>
+                <li><a href="#about">O mnie</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#sondaze">Sondaże</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#" id="loginBtn" class="btn-login">Zaloguj się</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MODAL LOGOWANIA ===== -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Panel Szefa Kampanii</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Hasło" required>
+                </div>
+                <p class="login-hint">Demo: użytkownik: admin | hasło: admin</p>
+                <button type="submit" class="btn-primary">Zaloguj się</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section id="hero" class="hero">
+            <div class="hero-background">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop" alt="Tło kampanii">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Mateusz Talar</h1>
+                    <p class="hero-tagline">Nowa przyszłość zaczyna się dziś</p>
+                    <p class="hero-subtitle">Razem budujemy Polskę przyszłości - nowoczesną, sprawiedliwą i prosperującą</p>
+                    <button class="btn-primary btn-large" id="joinBtn">Dołącz do nas</button>
+                </div>
+                <div class="hero-image">
+                    <img src="kandydat.png" alt="Mateusz Talar" class="candidate-photo">
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- ===== O KANDYDACIE ===== -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Kim jestem?</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="kandydat.png" alt="Mateusz Talar">
+                    </div>
+                    <div class="about-text">
+                        <h3>Mateusz Talar</h3>
+                        <p class="position">Kandydat na Premiera RP</p>
+                        <p>Jestem politykiem z ponad 15-letnim doświadczeniem w administracji publicznej i sektorze prywatnym. Wierzę w siłę dialogu, innowacji i wspólnej pracy dla dobra Polski.</p>
+                        <p>Moja wizja to kraj, w którym technologia służy ludziom, edukacja otwiera drzwi możliwości, a gospodarka rośnie zrównoważenie.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h4>15+</h4>
+                                <p>Lat doświadczenia</p>
+                            </div>
+                            <div class="stat">
+                                <h4>5M+</h4>
+                                <p>Zwolenników</p>
+                            </div>
+                            <div class="stat">
+                                <h4>48%</h4>
+                                <p>Poparcia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROGRAM WYBORCZY ===== -->
+        <section id="program" class="program">
+            <div class="container">
+                <h2 class="section-title">Mój Program</h2>
+                <div class="program-grid">
+                    <!-- Gospodarka -->
+                    <div class="program-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Gospodarka</h3>
+                        <p><strong>Wzrost PKB 5% rocznie</strong></p>
+                        <ul>
+                            <li>Wsparcie dla MŚP i startupów</li>
+                            <li>Cyfryzacja gospodarki</li>
+                            <li>Bezpieczeństwo energetyczne</li>
+                        </ul>
+                    </div>
+
+                    <!-- Edukacja -->
+                    <div class="program-card">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Edukacja</h3>
+                        <p><strong>Wyższa jakość kształcenia</strong></p>
+                        <ul>
+                            <li>Inwestycja w nauczycieli</li>
+                            <li>Nowoczesne szkoły</li>
+                            <li>Umiejętności przyszłości</li>
+                        </ul>
+                    </div>
+
+                    <!-- Zdrowie -->
+                    <div class="program-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Zdrowie</h3>
+                        <p><strong>Opieka dostępna dla wszystkich</strong></p>
+                        <ul>
+                            <li>Reformy systemu zdrowotnego</li>
+                            <li>Profilaktyka zdrowotna</li>
+                            <li>Nowoczesne technologie medyczne</li>
+                        </ul>
+                    </div>
+
+                    <!-- Technologia -->
+                    <div class="program-card">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Technologia</h3>
+                        <p><strong>Polska liderem innowacji</strong></p>
+                        <ul>
+                            <li>Centra R&D i incubatory</li>
+                            <li>Cyberbezpieczeństwo</li>
+                            <li>Green tech i zielona energia</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bezpieczeństwo -->
+                    <div class="program-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield"></i>
+                        </div>
+                        <h3>Bezpieczeństwo</h3>
+                        <p><strong>Polska silna i bezpieczna</strong></p>
+                        <ul>
+                            <li>Wzmocnienie obronności</li>
+                            <li>Bezpieczeństwo publiczne</li>
+                            <li>Walka z przestępczością</li>
+                        </ul>
+                    </div>
+
+                    <!-- Środowisko -->
+                    <div class="program-card">
+                        <div class="card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Środowisko</h3>
+                        <p><strong>Neutralność klimatyczna 2040</strong></p>
+                        <ul>
+                            <li>Energia odnawialna</li>
+                            <li>Ochrona przyrody</li>
+                            <li>Zrównoważony rozwój</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SONDAŻE ===== -->
+        <section id="sondaze" class="sondaze">
+            <div class="container">
+                <h2 class="section-title">Aktualne Sondaże</h2>
+                <div class="sondaze-content">
+                    <div class="chart-container">
+                        <canvas id="pollChart"></canvas>
+                    </div>
+                    <div class="sondaze-info">
+                        <h3>Trend wzrostu poparcia</h3>
+                        <p>Ostatnie 6 miesięcy pokazuje dynamiczny wzrost poparcia dla Mateusza Talara.</p>
+                        <div class="sondaze-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Bieżące poparcie:</span>
+                                <span class="detail-value detail-talar">48%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Trend:</span>
+                                <span class="detail-value positive"><i class="fas fa-arrow-up"></i> +8%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Próba:</span>
+                                <span class="detail-value">1000 respondentów</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALERIA ===== -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2 class="section-title">Galeria Kampanii</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Kampania">
+                        <div class="gallery-overlay">
+                            <span>Wiec wyborczy</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552058544-f006b1989e04?w=400&h=300&fit=crop" alt="Spotkanie">
+                        <div class="gallery-overlay">
+                            <span>Spotkanie z wyborcami</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Dyskusja">
+                        <div class="gallery-overlay">
+                            <span>Debata polityczna</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552058544-f006b1989e04?w=400&h=300&fit=crop" alt="Konferencja">
+                        <div class="gallery-overlay">
+                            <span>Konferencja prasowa</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Wolontariusze">
+                        <div class="gallery-overlay">
+                            <span>Zespół wolontariuszy</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552058544-f006b1989e04?w=400&h=300&fit=crop" alt="Akcja">
+                        <div class="gallery-overlay">
+                            <span>Akcja społeczna</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KONTAKT ===== -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Dołącz do nas</h2>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h3>Formularz Kontaktowy</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" placeholder="Imię i nazwisko" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Wiadomość" rows="5" required></textarea>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Chcę otrzymywać newsy z kampanii</label>
+                            </div>
+                            <button type="submit" class="btn-primary btn-block">Wyślij wiadomość</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Informacje Kontaktowe</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Adres</strong>
+                                <p>ul. Nowa Przyszłość 1<br>00-001 Warszawa, Polska</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Telefon</strong>
+                                <p>+48 22 XXX XX XX</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>kontakt@talar2026.pl</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== DASHBOARD (UKRYTY) ===== -->
+    <div id="dashboard" class="dashboard hidden">
+        <!-- Dashboard header -->
+        <div class="dashboard-header">
+            <div class="header-content">
+                <h1>Panel Szefa Kampanii</h1>
+                <button id="logoutBtn" class="btn-logout">Wyloguj się</button>
+            </div>
+        </div>
+
+        <!-- Dashboard content -->
+        <div class="dashboard-container">
+            <!-- Stats row -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon election">
+                        <i class="fas fa-person-booth"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Poparcie</h4>
+                        <p class="stat-number">48%</p>
+                        <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +8%</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon supporters">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Zwolennicy</h4>
+                        <p class="stat-number">5.2M</p>
+                        <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +240K</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon donations">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Darowizny</h4>
+                        <p class="stat-number">2.8M PLN</p>
+                        <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +180K</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon events">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>Wydarzenia</h4>
+                        <p class="stat-number">34</p>
+                        <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts row -->
+            <div class="charts-grid">
+                <!-- Poll chart -->
+                <div class="chart-card">
+                    <h3>Sondaże (ostatnie 6 miesięcy)</h3>
+                    <canvas id="dashboardPollChart"></canvas>
+                </div>
+
+                <!-- Regional stats -->
+                <div class="chart-card">
+                    <h3>Poparcie po Regionach</h3>
+                    <canvas id="regionalChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Members section -->
+            <div class="members-section">
+                <h3>Kluczowe osoby w kampanii</h3>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Członek">
+                        <h4>Maria Kowalski</h4>
+                        <p class="member-role">Dyrektor Kampanii</p>
+                        <p class="member-info">Doświadczenie: 12 lat</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Członek">
+                        <h4>Piotr Lewandowski</h4>
+                        <p class="member-role">Szef Komunikacji</p>
+                        <p class="member-info">Doświadczenie: 10 lat</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Członek">
+                        <h4>Anna Nowak</h4>
+                        <p class="member-role">Analityk Danych</p>
+                        <p class="member-info">Doświadczenie: 8 lat</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Członek">
+                        <h4>Tomasz Kamiński</h4>
+                        <p class="member-role">Koordynator Regionów</p>
+                        <p class="member-info">Doświadczenie: 7 lat</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity log -->
+            <div class="activity-section">
+                <h3>Ostatnia Aktywność</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="activity-content">
+                            <p><strong>Nowe wsparcie z regionu Śląska</strong></p>
+                            <small>Przed 2 godzinami</small>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-comments"></i>
+                        <div class="activity-content">
+                            <p><strong>Nowy komentarz w mediach społecznych</strong></p>
+                            <small>Przed 4 godzinami</small>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-users"></i>
+                        <div class="activity-content">
+                            <p><strong>Nowych 150 zwolenników z Warszawy</strong></p>
+                            <small>Przed 6 godzinami</small>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="activity-content">
+                            <p><strong>Zaplanowano nowy wiec wyborczy</strong></p>
+                            <small>Wczoraj o 14:30</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Mateusz Talar 2026</h4>
+                    <p>Nowa przyszłość zaczyna się dziś</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Szybkie linki</h4>
+                    <ul>
+                        <li><a href="#hero">Strona główna</a></li>
+                        <li><a href="#about">O mnie</a></li>
+                        <li><a href="#program">Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Polityka Prywatności</a></li>
+                        <li><a href="#">Warunki Użytkowania</a></li>
+                        <li><a href="#">Regulamin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kampania Mateusza Talara. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
